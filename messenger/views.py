@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required, permission_required
 from django.shortcuts import render, get_object_or_404, redirect
-from .forms import ChatForm, MessageForm
+from .forms import ChatForm,  MessageForm, MessageEditForm
 from .models import Chat, Message
 
 
@@ -41,3 +41,18 @@ def chat_create(request):
     else:
         form = ChatForm()
     return render(request, 'messenger/chat_form.html', {'form': form})
+
+
+@login_required
+def edit_message(request, message_id):
+    message = get_object_or_404(Message, pk=message_id)
+
+    if request.method == 'POST':
+        form = MessageEditForm(request.POST, instance=message)
+        if form.is_valid():
+            form.save()
+            return redirect('chat_detail', pk=message.chat.pk)
+    else:
+        form = MessageEditForm(instance=message)
+
+    return render(request, 'messenger/edit_message.html', {'form': form, 'message': message})

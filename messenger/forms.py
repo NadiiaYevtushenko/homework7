@@ -14,3 +14,10 @@ class MessageForm(forms.ModelForm):
     class Meta:
         model = Message
         fields = ['content']
+
+
+
+class MessageEditForm(forms.ModelForm):
+    class Meta:
+        model = Message
+        fields = ['content']
