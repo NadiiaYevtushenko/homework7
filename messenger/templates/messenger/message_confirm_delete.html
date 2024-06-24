@@ -1,0 +1,10 @@
+{% extends "base_generic.html" %}
+{% block content %}
+  <h1>Видалити повідомлення</h1>
+  <p>Ви впевнені, що хочете видалити це повідомлення?</p>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Так</button>
+    <a href="{% url 'chat_detail' object.chat.pk %}">Ні</a>
+  </form>
+{% endblock %}

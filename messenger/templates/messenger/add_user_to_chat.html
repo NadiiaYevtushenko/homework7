@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add User to Chat</title>
+</head>
+<body>
+    <h1>Add User to {{ chat.name }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add User</button>
+    </form>
+    <a href="{% url 'chat_detail' chat.id %}">Back to Chat</a>
+</body>
+</html>
