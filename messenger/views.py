@@ -46,6 +46,8 @@ def chat_create(request):
 @login_required
 def edit_message(request, message_id):
     message = get_object_or_404(Message, pk=message_id)
+    if request.user != message.author:
+        return render(request, 'messenger/edit_message_error.html')
 
     if request.method == 'POST':
         form = MessageEditForm(request.POST, instance=message)
@@ -55,4 +57,4 @@ def edit_message(request, message_id):
     else:
         form = MessageEditForm(instance=message)
 
-    return render(request, 'messenger/edit_message.html', {'form': form, 'message': message})
+    return render(request, 'messenger/edit_message.html', {'form': form})

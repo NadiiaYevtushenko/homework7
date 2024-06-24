@@ -8,6 +8,7 @@ class Chat(models.Model):
     def __str__(self):
         return self.name
 
+
 class Message(models.Model):
     chat = models.ForeignKey(Chat, on_delete=models.CASCADE)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
