@@ -15,4 +15,5 @@
     {{ form.as_p }}
     <button type="submit">Send</button>
   </form>
+  <a href="{% url 'add_user_to_chat' chat_id=chat.id %}">Add User to Chat</a>
 {% endblock %}

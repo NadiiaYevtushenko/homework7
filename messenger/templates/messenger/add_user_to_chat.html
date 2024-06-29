@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Add User to Chat</title>
-</head>
-<body>
-    <h1>Add User to {{ chat.name }}</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Add User</button>
-    </form>
-    <a href="{% url 'chat_detail' chat.id %}">Back to Chat</a>
-</body>
-</html>
+<!-- messenger/templates/messenger/add_user_to_chat.html -->
+
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Add user to chat: {{ chat.name }}</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add User</button>
+  </form>
+{% endblock %}

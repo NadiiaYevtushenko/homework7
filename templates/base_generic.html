@@ -3,15 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}My chat{% endblock %}</title>
+    <title>{% block title %}{{ page_title }}{% endblock %}</title>
 </head>
 <body>
     <header>
-        <h1>My chat</h1>
+        <h1>{{ page_title }}</h1>
         <nav>
             <ul>
                 <li><a href="{% url 'chat_list' %}">Chats</a></li>
-                
+                {% if user.is_authenticated %}
+                    <li>Logged in as: {{ user.username }}</li>
+                    <form action="{% url 'logout' %}" method="post">
+                        {% csrf_token %}
+                        <li><button type="submit">Logout</button></li>
+                    </form>
+                {% else %}
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                {% endif %}
             </ul>
         </nav>
     </header>

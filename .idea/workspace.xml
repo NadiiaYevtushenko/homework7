@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d61d144e-14dc-4386-a450-17daf59e066d" name="Changes" comment="First">
-      <change beforePath="$PROJECT_DIR$/messenger/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/messenger/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messenger/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/messenger/views.py" afterDir="false" />
+    <list default="true" id="d61d144e-14dc-4386-a450-17daf59e066d" name="Changes" comment="Last">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messenger/templates/messenger/chat_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/messenger/templates/messenger/chat_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base_generic.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base_generic.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,6 +93,11 @@
       <updated>1719262614810</updated>
       <workItem from="1719262616788" duration="5796000" />
       <workItem from="1719268921364" duration="1763000" />
+      <workItem from="1719270723215" duration="644000" />
+      <workItem from="1719326705236" duration="1073000" />
+      <workItem from="1719417322194" duration="413000" />
+      <workItem from="1719579699726" duration="2488000" />
+      <workItem from="1719678042877" duration="294000" />
     </task>
     <task id="LOCAL-00001" summary="First">
       <option name="closed" value="true" />
@@ -108,7 +115,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719269845890</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Last">
+      <option name="closed" value="true" />
+      <created>1719271021427</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1719271021427</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,6 +131,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First" />
-    <option name="LAST_COMMIT_MESSAGE" value="First" />
+    <MESSAGE value="Last" />
+    <option name="LAST_COMMIT_MESSAGE" value="Last" />
   </component>
 </project>
