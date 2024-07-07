@@ -4,8 +4,9 @@ from .forms import ChatForm,  MessageForm, MessageEditForm, LoginForm, AddUserFo
 from .models import Chat, Message
 from django.http import HttpResponseForbidden
 from django.contrib.auth import authenticate, login
-from .mixins import PaginationMixin
 from django.views.generic import ListView
+from django.views import View
+from .forms import SignUpForm
 
 
 class ChatListView(ListView):
@@ -13,6 +14,7 @@ class ChatListView(ListView):
     template_name = 'messenger/chat_list.html'
     context_object_name = 'chats'
     paginate_by = 3
+
 
 @login_required
 def chat_list(request):
@@ -107,3 +109,17 @@ def add_user_to_chat(request, chat_id):
     return render(request, 'messenger/add_user_to_chat.html', {'chat': chat, 'form': form})
 
 
+class SignupView(View):
+    @staticmethod
+    def get(request):
+        form = SignUpForm()
+        return render(request, 'registration/registration.html', {'form': form})
+
+    @staticmethod
+    def post(request):
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('chat_list')
+        return render(request, 'registration/registration.html', {'form': form})

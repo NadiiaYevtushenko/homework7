@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d61d144e-14dc-4386-a450-17daf59e066d" name="Changes" comment="Last">
+      <change beforePath="$PROJECT_DIR$/.idea/homework7.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/homework7.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messenger/templates/messenger/chat_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/messenger/templates/messenger/chat_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework7/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework7/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework7/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework7/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messenger/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/messenger/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messenger/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/messenger/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messenger/templates/messenger/add_all_users_to_chat.html" beforeDir="false" afterPath="$PROJECT_DIR$/messenger/templates/messenger/add_all_users_to_chat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messenger/templates/messenger/add_user_to_chat.html" beforeDir="false" afterPath="$PROJECT_DIR$/messenger/templates/messenger/add_user_to_chat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messenger/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/messenger/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base_generic.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base_generic.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,23 +36,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "django.template.preview.state": "SHOW_EDITOR_AND_PREVIEW",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/user/Desktop/Личное/Projects/homework7",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
+    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR_AND_PREVIEW&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/Desktop/Личное/Projects/homework7&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user\Desktop\Личное\Projects\homework7" />
+      <recent name="C:\Users\user\Desktop\Личное\Projects\homework7\messenger" />
+      <recent name="C:\Users\user\Desktop\Личное\Projects\homework7\chat" />
+      <recent name="C:\Users\user\Desktop\Личное\Projects\homework7\templates\registration" />
       <recent name="C:\Users\user\Desktop\Личное\Projects\homework7\templates" />
     </key>
   </component>
@@ -97,7 +109,17 @@
       <workItem from="1719326705236" duration="1073000" />
       <workItem from="1719417322194" duration="413000" />
       <workItem from="1719579699726" duration="2488000" />
-      <workItem from="1719678042877" duration="294000" />
+      <workItem from="1719678042877" duration="15722000" />
+      <workItem from="1719696465801" duration="922000" />
+      <workItem from="1719730193424" duration="581000" />
+      <workItem from="1719737359002" duration="423000" />
+      <workItem from="1719946206370" duration="949000" />
+      <workItem from="1719947802594" duration="1908000" />
+      <workItem from="1720106272933" duration="3993000" />
+      <workItem from="1720113795356" duration="975000" />
+      <workItem from="1720367656548" duration="9119000" />
+      <workItem from="1720380968039" duration="5177000" />
+      <workItem from="1720386173325" duration="661000" />
     </task>
     <task id="LOCAL-00001" summary="First">
       <option name="closed" value="true" />
@@ -123,7 +145,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719271021427</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Last">
+      <option name="closed" value="true" />
+      <created>1719696212708</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1719696212708</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,5 +163,15 @@
     <MESSAGE value="First" />
     <MESSAGE value="Last" />
     <option name="LAST_COMMIT_MESSAGE" value="Last" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/.venv/Lib/site-packages/django/contrib/auth/views.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

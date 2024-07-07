@@ -1,0 +1,12 @@
+{% extends 'base_generic.html' %}
+{% load static %}
+
+{% block content %}
+    <h2>Edit the message</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save message</button>
+    </form>
+    <a href="{% url 'chat_list' %}">Return to chats</a>
+{% endblock %}
