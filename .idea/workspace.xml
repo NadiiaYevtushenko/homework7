@@ -5,17 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d61d144e-14dc-4386-a450-17daf59e066d" name="Changes" comment="Last">
-      <change beforePath="$PROJECT_DIR$/.idea/homework7.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/homework7.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/chat/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/chat/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/chat/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/chat/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat/signals.py" beforeDir="false" afterPath="$PROJECT_DIR$/chat/signals.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/chat/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/chat/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homework7/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework7/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/homework7/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework7/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/messenger/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/messenger/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messenger/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/messenger/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messenger/templates/messenger/add_all_users_to_chat.html" beforeDir="false" afterPath="$PROJECT_DIR$/messenger/templates/messenger/add_all_users_to_chat.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messenger/templates/messenger/add_user_to_chat.html" beforeDir="false" afterPath="$PROJECT_DIR$/messenger/templates/messenger/add_user_to_chat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messenger/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/messenger/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messenger/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/messenger/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messenger/templates/chat/dialog.html" beforeDir="false" afterPath="$PROJECT_DIR$/messenger/templates/chat/dialog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messenger/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/messenger/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/messenger/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/messenger/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base_generic.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base_generic.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +48,7 @@
     &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
     &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR_AND_PREVIEW&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/Desktop/Личное/Projects/homework7&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/Desktop/Private/Projects/test_project&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -54,11 +59,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user\Desktop\Личное\Projects\homework7\messenger\templates\chat" />
+      <recent name="C:\Users\user\Desktop\Личное\Projects\homework7\chat\templates\chat" />
       <recent name="C:\Users\user\Desktop\Личное\Projects\homework7" />
       <recent name="C:\Users\user\Desktop\Личное\Projects\homework7\messenger" />
       <recent name="C:\Users\user\Desktop\Личное\Projects\homework7\chat" />
-      <recent name="C:\Users\user\Desktop\Личное\Projects\homework7\templates\registration" />
-      <recent name="C:\Users\user\Desktop\Личное\Projects\homework7\templates" />
     </key>
   </component>
   <component name="RunManager">
@@ -119,7 +124,9 @@
       <workItem from="1720113795356" duration="975000" />
       <workItem from="1720367656548" duration="9119000" />
       <workItem from="1720380968039" duration="5177000" />
-      <workItem from="1720386173325" duration="661000" />
+      <workItem from="1720386173325" duration="10473000" />
+      <workItem from="1720627913122" duration="14373000" />
+      <workItem from="1720886911540" duration="724000" />
     </task>
     <task id="LOCAL-00001" summary="First">
       <option name="closed" value="true" />
@@ -153,7 +160,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719696212708</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Last">
+      <option name="closed" value="true" />
+      <created>1720386878518</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1720386878518</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

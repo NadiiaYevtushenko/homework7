@@ -10,4 +10,3 @@ class Chat(AppConfig):
 
     def ready(self):
         import chat.signals
-

@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import ChatListView, chat_detail, chat_create, edit_message, add_user_to_chat
+from .views import ChatListView, chat_detail, chat_create, edit_message, add_user_to_chat, login_view, SignupView
 from django.contrib.auth.views import LogoutView
+
 
 urlpatterns = [
     path('', ChatListView.as_view(), name='chat_list'),

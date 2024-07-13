@@ -123,3 +123,5 @@ class SignupView(View):
             login(request, user)
             return redirect('chat_list')
         return render(request, 'registration/registration.html', {'form': form})
+
+

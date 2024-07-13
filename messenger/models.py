@@ -19,7 +19,6 @@ class Chat(models.Model):
             raise PermissionDenied("Only superusers can remove users from chat.")
         self.users.remove(user)
 
-
     def __str__(self):
         return self.name
 
@@ -46,6 +45,6 @@ class Message(models.Model):
         else:
             raise PermissionDenied("You cannot edit this message.")
 
-
     def __str__(self):
         return f'{self.author.username}: {self.content[:20]}'
+
