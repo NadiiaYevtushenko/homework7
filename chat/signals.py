@@ -6,7 +6,6 @@ from .models import Message
 
 logger = logging.getLogger(__name__)
 
-
 @receiver(post_save, sender=Message)
 def log_message(sender, instance, created, **kwargs):
     if created:
