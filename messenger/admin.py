@@ -10,6 +10,6 @@ class ChatAdmin(admin.ModelAdmin):
 
 @admin.register(Message)
 class MessageAdmin(admin.ModelAdmin):
-    list_display = ['chat', 'author', 'timestamp', 'content']
+    list_display = ['id','chat', 'author', 'timestamp', 'content']
     list_filter = ['chat', 'author']
     search_fields = ['content']
