@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Dialog</title>
+    <style>
+        .chat-box {
+            width: 80%;
+            margin: auto;
+            border: 1px solid #e01e1e;
+            padding: 10px;
+            background-color: #8c8787;
+        }
+        .message {
+            margin: 10px 0;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: #ffffff;
+        }
+        .message.sent {
+            text-align: right;
+            background-color: #d4f1f4;
+        }
+        .message.received {
+            text-align: left;
+            background-color: #f4d4d4;
+        }
+        .message-form {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .message-form textarea {
+            width: 80%;
+            height: 50px;
+        }
+        .success-message {
+            color: green;
+            font-weight: bold;
+            margin-top: 10px;
+            display: none;
+        }
+        .back-to-chats {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .user-status {
+            margin-left: 5px;
+            font-size: smaller;
+        }
+        .offline {
+            color: red;
+        }
+        .online {
+            color: green;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="chat-box">
+        <h1>Chat with Admin</h1>
+
+        <div id="chat-log">
+            {% for message in messages %}
+                <div class="message {% if message.sender == user %}sent{% else %}received{% endif %}">
+                    <p>
+                        <strong>{{ message.sender.username }}:</strong>
+                        <span class="user-status" id="user-status-{{ message.sender.id }}">Loading...</span>
+                        {{ message.content }}
+                    </p>
+                    <small>{{ message.timestamp }}</small>
+                </div>
+            {% endfor %}
+        </div>
+
+        <form id="chat-form" class="message-form" method="post" action="{% url 'chat:send_message' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Send</button>
+        </form>
+
+        <div id="success-message" class="success-message">Your message was successfully sent</div>
+
+        <div class="back-to-chats">
+            <button id="back-to-chats-button">Go to CHATS</button>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            // Масив для зберігання унікальних ID користувачів
+            const userIds = new Set();
+
+            // Додавання ID користувачів до набору
+            {% for message in messages %}
+                userIds.add({{ message.sender.id }});
+            {% endfor %}
+
+            // Функція для перевірки статусу користувача
+            function checkUserStatus(userId) {
+                fetch(`/api/check_user_status/${userId}/`)
+                    .then(response => response.json())
+                    .then(data => {
+                        const statusElement = document.getElementById(`user-status-${userId}`);
+                        if (data.is_online) {
+                            statusElement.textContent = 'Online';
+                            statusElement.classList.remove('offline');
+                            statusElement.classList.add('online');
+                        } else {
+                            statusElement.textContent = 'Offline';
+                            statusElement.classList.remove('online');
+                            statusElement.classList.add('offline');
+                        }
+                    })
+                    .catch(error => console.error('Error:', error));
+            }
+
+            // Перевірка статусу для всіх користувачів у чаті
+            userIds.forEach(function(userId) {
+                checkUserStatus(userId);
+            });
+
+            // Оновлення статусу кожні 5 секунд
+            setInterval(() => {
+                userIds.forEach(function(userId) {
+                    checkUserStatus(userId);
+                });
+            }, 5000);
+
+            // Обробка форми відправки повідомлень
+            $('#chat-form').on('submit', function(event){
+                event.preventDefault();
+                $.ajax({
+                    url: "{% url 'chat:send_message' %}",
+                    method: "POST",
+                    data: $(this).serialize(),
+                    success: function(response){
+                        if(response.status === 'success'){
+                            const messageElement = document.createElement('div');
+                            messageElement.className = 'message sent';
+                            messageElement.innerHTML = `<p><strong>${response.sender}:</strong> <span class="user-status" id="user-status-${response.sender_id}">Loading...</span> ${response.message}</p><small>${response.timestamp}</small>`;
+                            document.querySelector('#chat-log').appendChild(messageElement);
+                            $('#id_content').val('');
+                            $('#success-message').fadeIn().delay(3000).fadeOut();
+
+                            // Оновити статус відправника
+                            checkUserStatus(response.sender_id);
+                        } else {
+                            alert('Error sending message');
+                        }
+                    }
+                });
+            });
+
+            // Кнопка повернення до списку чатів
+            $('#back-to-chats-button').on('click', function(){
+                window.location.href = "{% url 'chat_list' %}";
+            });
+        });
+    </script>
+</body>
+</html>

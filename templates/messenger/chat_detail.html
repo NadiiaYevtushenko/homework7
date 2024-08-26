@@ -1,0 +1,66 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}Chat Detail{% endblock %}
+
+{% block content %}
+<h2>Chat: {{ chat.name }}</h2>
+
+<div id="chat-log">
+    {% for message in messages %}
+        <div class="message {% if message.author == user %}sent{% else %}received{% endif %}">
+            <p>
+                <strong>{{ message.author.username }}</strong>
+                <span data-username="{{ message.author.username }}" class="user-status">Loading...</span>
+                : {{ message.content }}
+            </p>
+            <small>{{ message.timestamp }}</small>
+            {% if message.can_user_edit %}
+                <a href="{% url 'edit_message' message.id %}">Edit</a>
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Send</button>
+</form>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    function checkUserStatus(username) {
+        fetch(`/api/check_user_status/${username}/`)
+            .then(response => response.json())
+            .then(data => {
+                const statusElements = document.querySelectorAll(`[data-username='${username}']`);
+                statusElements.forEach(statusElement => {
+                    if (data.is_online) {
+                        statusElement.innerText = "Online";
+                        statusElement.classList.add("btn-success");
+                        statusElement.classList.remove("btn-secondary");
+                    } else {
+                        statusElement.innerText = "Offline";
+                        statusElement.classList.add("btn-secondary");
+                        statusElement.classList.remove("btn-success");
+                    }
+                });
+            })
+            .catch(error => console.error('Error:', error));
+    }
+
+    function updateStatuses() {
+        const userElements = document.querySelectorAll('[data-username]');
+        const usernames = [...new Set(Array.from(userElements).map(element => element.getAttribute('data-username')))];
+        usernames.forEach(username => {
+            checkUserStatus(username);
+        });
+    }
+
+    // Обновление статуса каждые 30 секунд
+    setInterval(updateStatuses, 30000);
+
+    document.addEventListener("DOMContentLoaded", updateStatuses);
+</script>
+{% endblock %}

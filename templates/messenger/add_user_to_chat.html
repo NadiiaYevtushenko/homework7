@@ -1,0 +1,15 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}Add User to Chat{% endblock %}
+
+{% block content %}
+<h2>Add User to Chat: {{ chat.name }}</h2>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add User</button>
+</form>
+
+<a href="{% url 'chat_detail' chat.id %}">Back to Chat</a>
+{% endblock %}

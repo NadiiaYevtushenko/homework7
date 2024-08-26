@@ -7,6 +7,14 @@ from django.utils import timezone
 User = get_user_model()
 
 
+class UserStatus(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='status')
+    is_online = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f'{self.user.username} is {"online" if self.is_online else "offline"}'
+
+
 class Chat(models.Model):
     name = models.CharField(max_length=255)
     users = models.ManyToManyField(User, related_name='chats')
@@ -19,6 +27,7 @@ class Chat(models.Model):
             raise PermissionDenied("Only superusers can remove users from chat.")
         self.users.remove(user)
 
+
     def __str__(self):
         return self.name
 
@@ -28,12 +37,6 @@ class Message(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     content = models.TextField()
     timestamp = models.DateTimeField(auto_now_add=True)
-
-    # class Meta:
-    #     permissions = [
-    #         ("can_edit_message", "Can edit message"),
-    #         ("can_delete_message", "Can delete message"),
-    #     ]
 
     def can_edit(self, user):
         return self.author == user or user.is_superuser
@@ -47,4 +50,3 @@ class Message(models.Model):
 
     def __str__(self):
         return f'{self.author.username}: {self.content[:20]}'
-

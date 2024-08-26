@@ -7,7 +7,9 @@ from django.contrib.auth import authenticate, login
 from django.views.generic import ListView
 from django.views import View
 from .forms import SignUpForm
-
+from .models import UserStatus
+from django.http import JsonResponse
+from django.contrib.auth.models import User
 
 class ChatListView(ListView):
     model = Chat
@@ -27,7 +29,10 @@ def chat_detail(request, chat_id):
     chat = get_object_or_404(Chat, id=chat_id)
     if request.user not in chat.users.all():
         return HttpResponseForbidden("You do not have access to this chat.")
+
     messages = chat.message_set.all()
+    for message in messages:
+        message.can_user_edit = message.can_edit(request.user)  # Додаємо атрибут до кожного повідомлення
 
     if request.method == 'POST':
         form = MessageForm(request.POST)
@@ -125,3 +130,11 @@ class SignupView(View):
         return render(request, 'registration/registration.html', {'form': form})
 
 
+@login_required
+def check_user_status(request, username):
+    try:
+        user = get_object_or_404(User, username=username)
+        user_status = UserStatus.objects.get(user=user)
+        return JsonResponse({'is_online': user_status.is_online})
+    except UserStatus.DoesNotExist:
+        return JsonResponse({'is_online': False})

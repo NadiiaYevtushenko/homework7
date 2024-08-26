@@ -6,6 +6,7 @@ from .models import Message
 
 logger = logging.getLogger(__name__)
 
+
 @receiver(post_save, sender=Message)
 def log_message(sender, instance, created, **kwargs):
     if created:
@@ -15,5 +16,3 @@ def log_message(sender, instance, created, **kwargs):
         if instance.recipient.is_superuser:
             instance.send_success_to_sender = True
             instance.save()
-
-

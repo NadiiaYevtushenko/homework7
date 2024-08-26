@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{{ page_title }}{% endblock %}</title>
+    {% load static %}
+    <!-- Додавання інших стилів і метаданих -->
 </head>
 <body>
     <header>
@@ -29,5 +31,10 @@
         {% endblock %}
     </main>
     <a href="{% url 'chat:dialog' %}">Write to admin</a>
+
+    <!-- Підключення JavaScript-файлу -->
+    <script src="{% static 'js/your_script.js' %}" defer></script>
+    <!-- Інші скрипти, якщо є -->
+
 </body>
 </html>
